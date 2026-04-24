@@ -4,7 +4,7 @@
 ## 10. Implementation of programs using pointer arithmetic.
 # Ex.No:21
   Implement a C program to demonstrate call by value and call by reference by swapping two integers using separate functions.
-# Date : 
+# Date : 24-04-26
 # Aim:
  To implement a C program that illustrates the difference between call by value and call by reference by swapping two integer variables using two separate functions.
 # Algorithm:
@@ -39,7 +39,44 @@
 ### Step 12: 
   Stop
 # Program:
-# Output:
+```
+#include <stdio.h>
+
+void swapv(int x,int y)
+{
+    int temp;
+    temp=x;
+    x=y;
+    y=temp;
+    printf("Inside swapv: x=%d y=%d\n",x,y);
+}
+
+void swapr(int *x,int *y)
+{
+    int temp;
+    temp=*x;
+    *x=*y;
+    *y=temp;
+    printf("Inside swapr: x=%d y=%d\n",*x,*y);
+}
+
+int main()
+{
+    int a=10,b=20;
+
+    printf("Before swapv: a=%d b=%d\n",a,b);
+    swapv(a,b);
+    printf("After swapv: a=%d b=%d\n\n",a,b);
+
+    printf("Before swapr: a=%d b=%d\n",a,b);
+    swapr(&a,&b);
+    printf("After swapr: a=%d b=%d",a,b);
+
+    return 0;
+}
+```
+# Output: <img width="1194" height="796" alt="image" src="https://github.com/user-attachments/assets/77713bc4-58b5-4681-888f-463114383ca2" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
